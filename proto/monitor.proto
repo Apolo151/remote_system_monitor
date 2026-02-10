@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/Apolo151/remote_system_monitor/monitor;monitorpb";
+option go_package = "github.com/Apolo151/remote_system_monitor/monitorpb;monitorpb";
 
 package monitor;
 

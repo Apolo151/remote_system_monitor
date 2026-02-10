@@ -2,9 +2,9 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.1
 // - protoc             v3.12.4
-// source: monitor/monitor.proto
+// source: monitor.proto
 
-package remote_system_monitor
+package monitorpb
 
 import (
 	context "context"
@@ -126,5 +126,5 @@ var MonitorService_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "monitor/monitor.proto",
+	Metadata: "monitor.proto",
 }

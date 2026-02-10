@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v3.12.4
-// source: monitor/monitor.proto
+// source: monitor.proto
 
-package remote_system_monitor
+package monitorpb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -34,7 +34,7 @@ type SystemMetrics struct {
 
 func (x *SystemMetrics) Reset() {
 	*x = SystemMetrics{}
-	mi := &file_monitor_monitor_proto_msgTypes[0]
+	mi := &file_monitor_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +46,7 @@ func (x *SystemMetrics) String() string {
 func (*SystemMetrics) ProtoMessage() {}
 
 func (x *SystemMetrics) ProtoReflect() protoreflect.Message {
-	mi := &file_monitor_monitor_proto_msgTypes[0]
+	mi := &file_monitor_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +59,7 @@ func (x *SystemMetrics) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SystemMetrics.ProtoReflect.Descriptor instead.
 func (*SystemMetrics) Descriptor() ([]byte, []int) {
-	return file_monitor_monitor_proto_rawDescGZIP(), []int{0}
+	return file_monitor_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SystemMetrics) GetCpuPercent() float64 {
@@ -99,7 +99,7 @@ type MetricsRequest struct {
 
 func (x *MetricsRequest) Reset() {
 	*x = MetricsRequest{}
-	mi := &file_monitor_monitor_proto_msgTypes[1]
+	mi := &file_monitor_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -111,7 +111,7 @@ func (x *MetricsRequest) String() string {
 func (*MetricsRequest) ProtoMessage() {}
 
 func (x *MetricsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_monitor_monitor_proto_msgTypes[1]
+	mi := &file_monitor_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,14 +124,14 @@ func (x *MetricsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MetricsRequest.ProtoReflect.Descriptor instead.
 func (*MetricsRequest) Descriptor() ([]byte, []int) {
-	return file_monitor_monitor_proto_rawDescGZIP(), []int{1}
+	return file_monitor_proto_rawDescGZIP(), []int{1}
 }
 
-var File_monitor_monitor_proto protoreflect.FileDescriptor
+var File_monitor_proto protoreflect.FileDescriptor
 
-const file_monitor_monitor_proto_rawDesc = "" +
+const file_monitor_proto_rawDesc = "" +
 	"\n" +
-	"\x15monitor/monitor.proto\x12\amonitor\"\x89\x01\n" +
+	"\rmonitor.proto\x12\amonitor\"\x89\x01\n" +
 	"\rSystemMetrics\x12\x1f\n" +
 	"\vcpu_percent\x18\x01 \x01(\x01R\n" +
 	"cpuPercent\x12\x1f\n" +
@@ -141,26 +141,26 @@ const file_monitor_monitor_proto_rawDesc = "" +
 	"\bram_used\x18\x04 \x01(\x04R\aramUsed\"\x10\n" +
 	"\x0eMetricsRequest2T\n" +
 	"\x0eMonitorService\x12B\n" +
-	"\rStreamMetrics\x12\x17.monitor.MetricsRequest\x1a\x16.monitor.SystemMetrics0\x01B+Z)github.com/Apolo151/remote_system_monitorb\x06proto3"
+	"\rStreamMetrics\x12\x17.monitor.MetricsRequest\x1a\x16.monitor.SystemMetrics0\x01B?Z=github.com/Apolo151/remote_system_monitor/monitorpb;monitorpbb\x06proto3"
 
 var (
-	file_monitor_monitor_proto_rawDescOnce sync.Once
-	file_monitor_monitor_proto_rawDescData []byte
+	file_monitor_proto_rawDescOnce sync.Once
+	file_monitor_proto_rawDescData []byte
 )
 
-func file_monitor_monitor_proto_rawDescGZIP() []byte {
-	file_monitor_monitor_proto_rawDescOnce.Do(func() {
-		file_monitor_monitor_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_monitor_monitor_proto_rawDesc), len(file_monitor_monitor_proto_rawDesc)))
+func file_monitor_proto_rawDescGZIP() []byte {
+	file_monitor_proto_rawDescOnce.Do(func() {
+		file_monitor_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_monitor_proto_rawDesc), len(file_monitor_proto_rawDesc)))
 	})
-	return file_monitor_monitor_proto_rawDescData
+	return file_monitor_proto_rawDescData
 }
 
-var file_monitor_monitor_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_monitor_monitor_proto_goTypes = []any{
+var file_monitor_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_monitor_proto_goTypes = []any{
 	(*SystemMetrics)(nil),  // 0: monitor.SystemMetrics
 	(*MetricsRequest)(nil), // 1: monitor.MetricsRequest
 }
-var file_monitor_monitor_proto_depIdxs = []int32{
+var file_monitor_proto_depIdxs = []int32{
 	1, // 0: monitor.MonitorService.StreamMetrics:input_type -> monitor.MetricsRequest
 	0, // 1: monitor.MonitorService.StreamMetrics:output_type -> monitor.SystemMetrics
 	1, // [1:2] is the sub-list for method output_type
@@ -170,26 +170,26 @@ var file_monitor_monitor_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_monitor_monitor_proto_init() }
-func file_monitor_monitor_proto_init() {
-	if File_monitor_monitor_proto != nil {
+func init() { file_monitor_proto_init() }
+func file_monitor_proto_init() {
+	if File_monitor_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_monitor_monitor_proto_rawDesc), len(file_monitor_monitor_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_monitor_proto_rawDesc), len(file_monitor_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_monitor_monitor_proto_goTypes,
-		DependencyIndexes: file_monitor_monitor_proto_depIdxs,
-		MessageInfos:      file_monitor_monitor_proto_msgTypes,
+		GoTypes:           file_monitor_proto_goTypes,
+		DependencyIndexes: file_monitor_proto_depIdxs,
+		MessageInfos:      file_monitor_proto_msgTypes,
 	}.Build()
-	File_monitor_monitor_proto = out.File
-	file_monitor_monitor_proto_goTypes = nil
-	file_monitor_monitor_proto_depIdxs = nil
+	File_monitor_proto = out.File
+	file_monitor_proto_goTypes = nil
+	file_monitor_proto_depIdxs = nil
 }
