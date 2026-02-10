@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/Apolo151/remote_system_monitor";
+
+package monitor;
+
+// The message containing CPU and RAM stats.
+message SystemMetrics {
+  double cpu_percent = 1; // CPU usage percentage
+  double ram_percent = 2; // RAM usage percentage
+  uint64 ram_total = 3; // Total RAM in bytes
+  uint64 ram_used = 4; // Used RAM in bytes
+}
+
+// Empty message for the request (could be extended for filters).
+message MetricsRequest {}
+
+// The monitoring service definition
+service MonitorService {
+  // Server-side streaming RPC
+  rpc StreamMetrics(MetricsRequest) returns (stream SystemMetrics);
+}
